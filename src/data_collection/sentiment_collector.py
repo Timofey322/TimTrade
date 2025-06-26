@@ -452,7 +452,11 @@ class SentimentCollector:
     def _get_crypto_news_rss(self, days: int) -> pd.DataFrame:
         """Получает новости через RSS."""
         try:
-            import feedparser
+            try:
+                import feedparser
+            except ImportError:
+                self.logger.warning("feedparser not installed, using fallback data")
+                return pd.DataFrame()
             
             feed = feedparser.parse(self.coindesk_rss)
             
