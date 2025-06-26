@@ -1,0 +1,98 @@
+{
+  "config": {
+    "initial_capital": 10000,
+    "commission": 0.001,
+    "slippage": 0.0005,
+    "position_size": 0.25,
+    "min_confidence": 0.45,
+    "max_positions": 4,
+    "adaptive_risk": true,
+    "use_proper_train_test_split": true,
+    "filters": {
+      "min_volume_ratio": 1.0,
+      "max_volatility_percentile": 95,
+      "min_momentum_threshold": 0.001,
+      "time_filter_enabled": false,
+      "spread_filter_enabled": false,
+      "min_gap_between_signals": 3
+    },
+    "enabled": true,
+    "auto_run_after_training": true,
+    "trend_filter": false,
+    "volatility_filter": false,
+    "adaptive_strategy": {
+      "enabled": true,
+      "market_condition_weights": {
+        "volatility": 0.25,
+        "trend": 0.2,
+        "asymmetry": 0.15,
+        "volume": 0.15,
+        "vol_of_vol": 0.15,
+        "model_performance": 0.1
+      },
+      "adaptive_multipliers": {
+        "confidence_range": [
+          0.3,
+          0.7
+        ],
+        "volume_ratio_range": [
+          0.5,
+          1.5
+        ],
+        "volatility_percentile_range": [
+          90,
+          99
+        ],
+        "momentum_threshold_range": [
+          0.0005,
+          0.002
+        ],
+        "position_size_range": [
+          0.1,
+          0.5
+        ],
+        "max_positions_range": [
+          2,
+          6
+        ],
+        "signal_gap_range": [
+          1,
+          8
+        ]
+      },
+      "market_thresholds": {
+        "high_volatility": 1.3,
+        "low_volatility": 0.7,
+        "strong_trend": 0.02,
+        "high_volume": 1.5,
+        "low_volume": 0.7,
+        "high_vol_of_vol": 0.4,
+        "low_vol_of_vol": 0.2,
+        "high_model_accuracy": 0.6,
+        "low_model_accuracy": 0.4
+      }
+    }
+  },
+  "trades": [],
+  "equity_curve": [
+    {
+      "timestamp": "2023-08-01 02:00:00",
+      "equity": 10000,
+      "price": 29216.39
+    }
+  ],
+  "metrics": {
+    "total_return": 0.0,
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "volatility": 0,
+    "sharpe_ratio": 0,
+    "max_drawdown": 0.0,
+    "final_capital": 10000,
+    "initial_capital": 10000
+  },
+  "timestamp": "2025-06-25T14:12:17.955788"
+}

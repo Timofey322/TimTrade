@@ -1,0 +1,184 @@
+{
+  "config": {
+    "method": "bayesian",
+    "metric": "f1",
+    "n_calls": 50,
+    "n_splits": 5,
+    "random_state": 42,
+    "checkpoint_enabled": true,
+    "checkpoint_name": "optimization_checkpoint",
+    "checkpoint_dir": "models/checkpoints",
+    "search_space": {
+      "max_depth": [
+        3,
+        10
+      ],
+      "learning_rate": [
+        0.01,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        300
+      ],
+      "subsample": [
+        0.6,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.6,
+        1.0
+      ],
+      "reg_alpha": [
+        0.1,
+        10.0
+      ],
+      "reg_lambda": [
+        0.1,
+        10.0
+      ],
+      "min_child_weight": [
+        3,
+        10
+      ]
+    },
+    "type": "xgboost",
+    "test_size": 0.2,
+    "validation_size": 0.2,
+    "model_saving": {
+      "enabled": true,
+      "directory": "models",
+      "filename": "xgboost_{symbol}.pkl",
+      "save_metadata": true,
+      "save_training_info": true
+    },
+    "cross_validation": {
+      "enabled": true,
+      "method": "time_series_split",
+      "n_splits": 5,
+      "shuffle": false,
+      "random_state": 42
+    },
+    "default_params": {
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "n_estimators": 1000,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1.0,
+      "min_child_weight": 3,
+      "random_state": 42,
+      "eval_metric": "mlogloss"
+    },
+    "hyperparameter_optimization": {
+      "enabled": true,
+      "method": "bayesian",
+      "metric": "f1",
+      "n_calls": 50,
+      "checkpoint_enabled": true,
+      "checkpoint_name": "xgboost_optimization",
+      "use_cross_validation": true,
+      "search_space": {
+        "max_depth": [
+          4,
+          12
+        ],
+        "learning_rate": [
+          0.05,
+          0.3
+        ],
+        "n_estimators": [
+          500,
+          1200
+        ],
+        "subsample": [
+          0.6,
+          0.95
+        ],
+        "colsample_bytree": [
+          0.6,
+          0.95
+        ],
+        "reg_alpha": [
+          0.01,
+          5.0
+        ],
+        "reg_lambda": [
+          0.1,
+          15.0
+        ],
+        "min_child_weight": [
+          1,
+          10
+        ]
+      }
+    }
+  },
+  "best_params": {
+    "max_depth": 10,
+    "learning_rate": 0.3,
+    "n_estimators": 300,
+    "subsample": 1.0,
+    "colsample_bytree": 1.0,
+    "reg_alpha": 0.1,
+    "reg_lambda": 0.1,
+    "min_child_weight": 3
+  },
+  "best_score": 0.6119851034922653,
+  "optimization_time": 862.9981479644775,
+  "n_iterations": 50,
+  "convergence_history": [
+    0.4741058380866242,
+    0.4741058380866242,
+    0.4741058380866242,
+    0.4741058380866242,
+    0.4741058380866242,
+    0.4741058380866242,
+    0.47831702313728847,
+    0.47831702313728847,
+    0.47831702313728847,
+    0.5905808702083102,
+    0.5905808702083102,
+    0.5905808702083102,
+    0.6048125316958574,
+    0.6048125316958574,
+    0.6048125316958574,
+    0.6048125316958574,
+    0.6048125316958574,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653,
+    0.6119851034922653
+  ],
+  "timestamp": "20250623_133643"
+}

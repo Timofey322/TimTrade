@@ -1,0 +1,719 @@
+{
+  "BTC_USDT_5m": {
+    "results": {
+      "best_combination": [
+        "macd",
+        "obv",
+        "vwap"
+      ],
+      "best_score": 0.613,
+      "prediction_horizon": 12,
+      "all_results": [
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "williams_r"
+          ],
+          "score": 0.3733221476510067,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "cci"
+          ],
+          "score": 0.39916107382550337,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "atr"
+          ],
+          "score": 0.42969798657718117,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "obv"
+          ],
+          "score": 0.413255033557047,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "vwap"
+          ],
+          "score": 0.45788590604026846,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "williams_r",
+            "cci"
+          ],
+          "score": 0.4288590604026845,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "williams_r",
+            "atr"
+          ],
+          "score": 0.4100671140939597,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "williams_r",
+            "obv"
+          ],
+          "score": 0.44180602006688957,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "williams_r",
+            "vwap"
+          ],
+          "score": 0.4605351170568561,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "cci",
+            "atr"
+          ],
+          "score": 0.438255033557047,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "cci",
+            "obv"
+          ],
+          "score": 0.44295302013422816,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "cci",
+            "vwap"
+          ],
+          "score": 0.48758389261744967,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "atr",
+            "obv"
+          ],
+          "score": 0.4993288590604026,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "atr",
+            "vwap"
+          ],
+          "score": 0.5087248322147652,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "obv",
+            "vwap"
+          ],
+          "score": 0.5963210702341136,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "williams_r"
+          ],
+          "score": 0.43288590604026844,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "cci"
+          ],
+          "score": 0.4023489932885906,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "atr"
+          ],
+          "score": 0.435234899328859,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "obv"
+          ],
+          "score": 0.48456375838926175,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "vwap"
+          ],
+          "score": 0.5338926174496644,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "williams_r",
+            "cci"
+          ],
+          "score": 0.4358389261744966,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "williams_r",
+            "atr"
+          ],
+          "score": 0.445234899328859,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "williams_r",
+            "obv"
+          ],
+          "score": 0.5212040133779263,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "williams_r",
+            "vwap"
+          ],
+          "score": 0.5610033444816054,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "cci",
+            "atr"
+          ],
+          "score": 0.44993288590604025,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "cci",
+            "obv"
+          ],
+          "score": 0.48986577181208046,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "cci",
+            "vwap"
+          ],
+          "score": 0.5556375838926174,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "atr",
+            "obv"
+          ],
+          "score": 0.5391946308724832,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "atr",
+            "vwap"
+          ],
+          "score": 0.5744295302013422,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "obv",
+            "vwap"
+          ],
+          "score": 0.613,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "williams_r"
+          ],
+          "score": 0.48145973154362415,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "cci"
+          ],
+          "score": 0.4791107382550335,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "atr"
+          ],
+          "score": 0.5237416107382551,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "obv"
+          ],
+          "score": 0.5049496644295302,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "vwap"
+          ],
+          "score": 0.5636744966442953,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "williams_r",
+            "cci"
+          ],
+          "score": 0.5126558005752636,
+          "indicator_count": 3
+        }
+      ]
+    },
+    "timestamp": "2025-06-25T22:41:09.851687",
+    "symbol": "BTC_USDT",
+    "timeframe": "5m",
+    "version": "1.0"
+  },
+  "BTC_USDT_15m": {
+    "results": {
+      "best_combination": [
+        "rsi",
+        "obv",
+        "vwap"
+      ],
+      "best_score": 0.5963210702341136,
+      "prediction_horizon": 10,
+      "all_results": [
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "williams_r"
+          ],
+          "score": 0.3498322147651007,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "cci"
+          ],
+          "score": 0.3733221476510067,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "atr"
+          ],
+          "score": 0.39446308724832213,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "obv"
+          ],
+          "score": 0.42265100671140937,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "stochastic",
+            "vwap"
+          ],
+          "score": 0.4508389261744966,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "williams_r",
+            "cci"
+          ],
+          "score": 0.4288590604026845,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "williams_r",
+            "atr"
+          ],
+          "score": 0.4124161073825503,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "williams_r",
+            "obv"
+          ],
+          "score": 0.4605351170568561,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "williams_r",
+            "vwap"
+          ],
+          "score": 0.4816053511705685,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "cci",
+            "atr"
+          ],
+          "score": 0.4100671140939597,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "cci",
+            "obv"
+          ],
+          "score": 0.4593959731543624,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "cci",
+            "vwap"
+          ],
+          "score": 0.49228187919463084,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "atr",
+            "obv"
+          ],
+          "score": 0.5251677852348993,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "atr",
+            "vwap"
+          ],
+          "score": 0.5345637583892617,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "rsi",
+            "obv",
+            "vwap"
+          ],
+          "score": 0.5963210702341136,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "williams_r"
+          ],
+          "score": 0.3765100671140939,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "cci"
+          ],
+          "score": 0.45637583892617445,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "atr"
+          ],
+          "score": 0.4375838926174497,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "obv"
+          ],
+          "score": 0.4751677852348993,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "stochastic",
+            "vwap"
+          ],
+          "score": 0.45637583892617445,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "williams_r",
+            "cci"
+          ],
+          "score": 0.4593288590604026,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "williams_r",
+            "atr"
+          ],
+          "score": 0.48986577181208046,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "williams_r",
+            "obv"
+          ],
+          "score": 0.5165217391304348,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "williams_r",
+            "vwap"
+          ],
+          "score": 0.5352508361204014,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "cci",
+            "atr"
+          ],
+          "score": 0.46872483221476513,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "cci",
+            "obv"
+          ],
+          "score": 0.5297986577181208,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "cci",
+            "vwap"
+          ],
+          "score": 0.5485906040268456,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "atr",
+            "obv"
+          ],
+          "score": 0.5791275167785235,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "atr",
+            "vwap"
+          ],
+          "score": 0.5861744966442952,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "obv",
+            "vwap"
+          ],
+          "score": 0.5826666666666667,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "williams_r"
+          ],
+          "score": 0.46736577181208044,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "cci"
+          ],
+          "score": 0.4697147651006711,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "atr"
+          ],
+          "score": 0.5213926174496644,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "obv"
+          ],
+          "score": 0.5425335570469798,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "stochastic",
+            "vwap"
+          ],
+          "score": 0.5519295302013423,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "bollinger",
+            "williams_r",
+            "cci"
+          ],
+          "score": 0.48446788111217637,
+          "indicator_count": 3
+        }
+      ]
+    },
+    "timestamp": "2025-06-25T22:57:44.096214",
+    "symbol": "BTC_USDT",
+    "timeframe": "15m",
+    "version": "1.0"
+  },
+  "BTC_USDT_1h": {
+    "results": {
+      "best_combination": [
+        "rsi",
+        "obv",
+        "vwap"
+      ],
+      "best_score": 0.62,
+      "prediction_horizon": 8,
+      "all_results": [
+        {
+          "combination": [
+            "rsi",
+            "obv",
+            "vwap"
+          ],
+          "score": 0.62,
+          "indicator_count": 3
+        },
+        {
+          "combination": [
+            "macd",
+            "obv",
+            "vwap"
+          ],
+          "score": 0.61,
+          "indicator_count": 3
+        }
+      ]
+    },
+    "timestamp": "2025-06-26T13:51:00.000000",
+    "symbol": "BTC_USDT",
+    "timeframe": "1h",
+    "version": "1.0"
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "config": {
+    "method": "bayesian",
+    "metric": "f1",
+    "n_calls": 50,
+    "n_splits": 5,
+    "random_state": 42,
+    "checkpoint_enabled": true,
+    "checkpoint_name": "optimization_checkpoint",
+    "checkpoint_dir": "models/checkpoints",
+    "search_space": {
+      "max_depth": [
+        3,
+        10
+      ],
+      "learning_rate": [
+        0.01,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        300
+      ],
+      "subsample": [
+        0.6,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.6,
+        1.0
+      ],
+      "reg_alpha": [
+        0.1,
+        10.0
+      ],
+      "reg_lambda": [
+        0.1,
+        10.0
+      ],
+      "min_child_weight": [
+        3,
+        10
+      ]
+    },
+    "type": "improved_xgboost",
+    "test_size": 0.2,
+    "validation_size": 0.2,
+    "model_saving": {
+      "enabled": true,
+      "directory": "models",
+      "filename": "improved_xgboost_{symbol}.pkl",
+      "save_metadata": true,
+      "save_training_info": true
+    },
+    "cross_validation": {
+      "enabled": true,
+      "method": "time_series_split",
+      "n_splits": 5,
+      "test_size": 0.2,
+      "shuffle": false,
+      "random_state": 42
+    },
+    "default_params": {
+      "n_estimators": 1000,
+      "max_depth": 8,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1.0,
+      "min_child_weight": 3,
+      "random_state": 42,
+      "eval_metric": "logloss",
+      "objective": "binary:logistic",
+      "early_stopping_rounds": 50,
+      "verbose": false,
+      "n_jobs": -1
+    },
+    "feature_selection": {
+      "enabled": true,
+      "method": "mutual_info",
+      "n_features": 50,
+      "threshold": 0.01
+    },
+    "ensemble": {
+      "enabled": true,
+      "n_models": 3,
+      "voting_method": "soft"
+    },
+    "hyperparameter_optimization": {
+      "enabled": true,
+      "method": "bayesian",
+      "metric": "f1",
+      "n_calls": 100,
+      "checkpoint_enabled": true,
+      "checkpoint_name": "improved_xgboost_optimization",
+      "use_cross_validation": true,
+      "custom_cv_with_eval_set": true,
+      "early_stopping_rounds": 20,
+      "search_space": {
+        "max_depth": [
+          4,
+          12
+        ],
+        "learning_rate": [
+          0.01,
+          0.2
+        ],
+        "n_estimators": [
+          500,
+          2000
+        ],
+        "subsample": [
+          0.6,
+          0.95
+        ],
+        "colsample_bytree": [
+          0.6,
+          0.95
+        ],
+        "reg_alpha": [
+          0.01,
+          10.0
+        ],
+        "reg_lambda": [
+          0.1,
+          20.0
+        ],
+        "min_child_weight": [
+          1,
+          15
+        ],
+        "early_stopping_rounds": [
+          30,
+          100
+        ]
+      }
+    }
+  },
+  "best_params": {
+    "max_depth": 3,
+    "learning_rate": 0.29631517688596654,
+    "n_estimators": 55,
+    "subsample": 0.7846892572105938,
+    "colsample_bytree": 0.9985169931537219,
+    "reg_alpha": 9.714650916201906,
+    "reg_lambda": 1.9738747551077052,
+    "min_child_weight": 5
+  },
+  "best_score": 0.560265540067671,
+  "optimization_time": 1602.6197273731232,
+  "n_iterations": 50,
+  "convergence_history": [
+    0.5352428095569242,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5586233181264612,
+    0.5594116959271697,
+    0.5594116959271697,
+    0.5594116959271697,
+    0.5594116959271697,
+    0.5594116959271697,
+    0.5594116959271697,
+    0.5594116959271697,
+    0.5594116959271697,
+    0.5594116959271697,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671,
+    0.560265540067671
+  ],
+  "timestamp": "20250624_225909"
+}

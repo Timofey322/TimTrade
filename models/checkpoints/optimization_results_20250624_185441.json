@@ -1,0 +1,89 @@
+{
+  "config": {
+    "method": "bayesian",
+    "metric": "f1",
+    "n_calls": 20,
+    "n_splits": 5,
+    "random_state": 42,
+    "checkpoint_enabled": true,
+    "checkpoint_name": "test_bayesian_smote",
+    "checkpoint_dir": "models/checkpoints",
+    "search_space": {
+      "max_depth": [
+        4,
+        12
+      ],
+      "learning_rate": [
+        0.01,
+        0.2
+      ],
+      "n_estimators": [
+        500,
+        2000
+      ],
+      "subsample": [
+        0.6,
+        0.95
+      ],
+      "colsample_bytree": [
+        0.6,
+        0.95
+      ],
+      "reg_alpha": [
+        0.01,
+        10.0
+      ],
+      "reg_lambda": [
+        0.1,
+        20.0
+      ],
+      "min_child_weight": [
+        1,
+        15
+      ],
+      "early_stopping_rounds": [
+        30,
+        100
+      ]
+    },
+    "enabled": true,
+    "use_cross_validation": true
+  },
+  "best_params": {
+    "max_depth": 10,
+    "learning_rate": 0.04485261007457113,
+    "n_estimators": 1670,
+    "subsample": 0.8088975552812705,
+    "colsample_bytree": 0.7560414634987569,
+    "reg_alpha": 1.0087494090218492,
+    "reg_lambda": 9.239052950120758,
+    "min_child_weight": 6,
+    "early_stopping_rounds": 40
+  },
+  "best_score": 0.1,
+  "optimization_time": 9.07707405090332,
+  "n_iterations": 20,
+  "convergence_history": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "timestamp": "20250624_185441"
+}

@@ -1,0 +1,277 @@
+# Конфигурация Smart Adaptive Strategy с интегрированными Advanced Features
+
+# Торговые пары
+symbols: ['BTCUSDT', 'ETHUSDT']
+
+# Таймфреймы для анализа
+timeframes: ['5m', '15m', '1h']
+
+# НОВОЕ: Конфигурация продвинутых фичей
+advanced_features:
+  enabled: true  # Включаем advanced features
+  
+  # API ключи (заполните реальными ключами для production)
+  api_keys:
+    glassnode_api_key: "demo"  # Замените на реальный ключ
+    twitter_bearer_token: ""   # Опционально для social sentiment
+    news_api_key: ""           # Опционально для news sentiment
+  
+  # Настройки sentiment анализа (упрощенные - только Bybit)
+  sentiment:
+    bybit_opportunities: true
+    cache_duration_hours: 2
+    
+    # Веса для composite sentiment score
+    weights:
+      market_sentiment: 0.4
+      trending_ratio: 0.3  
+      gainers_ratio: 0.3
+
+# Индикаторы для каждого таймфрейма (фиксированные оптимальные)
+indicators:
+  '5m': ['macd', 'obv', 'vwap']
+  '15m': ['rsi', 'obv', 'vwap']  
+  '1h': ['rsi', 'obv', 'vwap']
+
+# ОБНОВЛЕННОЕ: Конфигурация confidence scorer с sentiment
+confidence_scorer:
+  enabled: true
+  
+  # Веса факторов (обновлены с учетом sentiment)
+  weights:
+    indicator_agreement: 0.25      # Согласованность индикаторов
+    signal_strength: 0.22          # Сила сигнала
+    volatility_factor: 0.18        # Фактор волатильности
+    volume_confirmation: 0.15      # Объемное подтверждение
+    market_regime: 0.1             # Рыночный режим
+    sentiment_confirmation: 0.1    # НОВОЕ: Sentiment подтверждение
+  
+  # Пороги для фильтрации
+  thresholds:
+    min_confidence: 0.6           # Минимальный confidence для сигнала
+    high_confidence: 0.75         # Порог для высокого confidence
+    rsi_overbought: 70
+    rsi_oversold: 30
+    williams_r_overbought: -20
+    williams_r_oversold: -80
+    cci_overbought: 100
+    cci_oversold: -100
+
+# Конфигурация моделей ML
+models:
+  ensemble:
+    enabled: true
+    
+    # XGBoost модель  
+    xgboost:
+      n_estimators: 200
+      max_depth: 8
+      learning_rate: 0.1
+      subsample: 0.8
+      colsample_bytree: 0.8
+      random_state: 42
+      n_jobs: -1
+      
+    # Random Forest модель
+    random_forest:
+      n_estimators: 150
+      max_depth: 15
+      min_samples_split: 5
+      min_samples_leaf: 2
+      random_state: 42
+      n_jobs: -1
+      
+    # LightGBM модель
+    lightgbm:
+      n_estimators: 200
+      max_depth: 10
+      learning_rate: 0.1
+      num_leaves: 31
+      random_state: 42
+      n_jobs: -1
+      force_col_wise: true
+
+# Feature Engineering с sentiment
+feature_engineering:
+  # Основные настройки
+  enabled: true
+  max_features: 50               # Увеличили для sentiment фичей
+  importance_threshold: 0.003    # Понизили для включения sentiment фичей
+  
+  # Технические индикаторы
+  technical_indicators:
+    periods:
+      short: [5, 10, 14]
+      medium: [20, 30]
+      long: [50, 100]
+  
+  # Горизонты предсказаний для разных таймфреймов
+  prediction_horizons:
+    '5m': 12   # 1 час
+    '15m': 10  # 2.5 часа
+    '1h': 8    # 8 часов
+    '4h': 6    # 1 день
+    '1d': 5    # 5 дней
+
+# ОБНОВЛЕННОЕ: Управление рисками с sentiment адаптацией
+risk_management:
+  # Базовые настройки
+  max_position_size: 0.02         # 2% от депозита
+  max_total_exposure: 0.1         # 10% суммарной экспозиции
+  
+  # Sentiment-адаптивное позиционирование
+  sentiment_adjustment:
+    enabled: true
+    
+    # Мультипликаторы размера позиции на основе sentiment
+    bullish_regime_multiplier: 1.3    # Увеличиваем позиции в бычьем режиме
+    bearish_regime_multiplier: 0.7    # Уменьшаем позиции в медвежьем режиме
+    neutral_regime_multiplier: 1.0    # Обычные позиции в нейтральном режиме
+    
+    # Корректировки на основе confidence
+    high_confidence_multiplier: 1.2   # Увеличиваем при высоком confidence
+    low_confidence_multiplier: 0.8    # Уменьшаем при низком confidence
+  
+  # Stop Loss
+  stop_loss:
+    enabled: true
+    default_percentage: 0.02       # 2% стоп-лосс
+    atr_multiplier: 2.0           # Динамический стоп на основе ATR
+    sentiment_adjustment: true     # Корректировка стопов по sentiment
+  
+  # Take Profit
+  take_profit:
+    enabled: true
+    default_percentage: 0.04       # 4% тейк-профит
+    trailing_enabled: true         # Трейлинг тейк-профит
+    sentiment_adjustment: true     # Корректировка TP по sentiment
+
+# Конфигурация входов с sentiment фильтрацией
+entry_rules:
+  # Минимальные требования для входа
+  min_indicators_agreement: 6      # Увеличили требования
+  min_confidence: 0.6              # Минимальный confidence
+  
+  # НОВОЕ: Sentiment фильтры
+  sentiment_filters:
+    enabled: true
+    
+    # Требования для покупки
+    buy_requirements:
+      min_sentiment_score: 0.4     # Минимальный sentiment для покупки
+      bullish_regime_bonus: 0.1    # Бонус confidence в бычьем режиме
+      
+    # Требования для продажи  
+    sell_requirements:
+      max_sentiment_score: 0.6     # Максимальный sentiment для продажи
+      bearish_regime_bonus: 0.1    # Бонус confidence в медвежьем режиме
+  
+  # Фильтры волатильности
+  volatility_filters:
+    max_atr_percentage: 5.0        # Максимальная волатильность для входа
+    min_volume_ratio: 0.5          # Минимальный относительный объем
+
+# Конфигурация выходов с sentiment адаптацией
+exit_rules:
+  # Сигналы выхода
+  exit_on_opposite_signal: true
+  exit_on_low_confidence: true
+  min_exit_confidence: 0.5
+  
+  # НОВОЕ: Sentiment-адаптивные выходы
+  sentiment_exits:
+    enabled: true
+    
+    # Ранний выход при изменении sentiment
+    early_exit_on_sentiment_change: true
+    sentiment_change_threshold: 0.3   # Изменение sentiment на 30%
+    
+    # Удержание позиций при благоприятном sentiment
+    hold_on_favorable_sentiment: true
+    favorable_sentiment_threshold: 0.7
+
+# Настройки бэктестинга
+backtesting:
+  # Период для тестирования
+  start_date: '2024-01-01'
+  end_date: '2024-12-31'
+  
+  # Торговые настройки
+  initial_balance: 10000
+  commission: 0.001              # 0.1% комиссия
+  slippage: 0.0005              # 0.05% слиппаж
+  
+  # Выходные метрики
+  metrics:
+    - 'total_return'
+    - 'sharpe_ratio'
+    - 'max_drawdown'
+    - 'win_rate'
+    - 'profit_factor'
+    - 'total_trades'
+    - 'avg_trade_duration'
+    - 'sentiment_accuracy'        # НОВОЕ: Точность sentiment предсказаний
+
+# Логирование и мониторинг
+logging:
+  level: INFO
+  
+  # НОВОЕ: Sentiment мониторинг
+  sentiment_monitoring:
+    enabled: true
+    log_sentiment_changes: true
+    log_regime_changes: true
+    alert_on_extreme_sentiment: true
+    
+  # Performance мониторинг
+  performance_monitoring:
+    enabled: true
+    log_confidence_distribution: true
+    log_feature_importance: true
+    log_model_performance: true
+
+# НОВОЕ: Алерты и уведомления
+alerts:
+  enabled: true
+  
+  # Sentiment алерты
+  sentiment_alerts:
+    extreme_fear_threshold: 0.2    # Алерт при экстремальном страхе
+    extreme_greed_threshold: 0.8   # Алерт при экстремальной жадности
+    regime_change_alert: true      # Алерт при смене режима
+  
+  # Trading алерты
+  trading_alerts:
+    high_confidence_signal: 0.8   # Алерт при сигнале с высоким confidence
+    low_confidence_warning: 0.4   # Предупреждение при низком confidence
+    significant_drawdown: 0.05    # Алерт при просадке >5%
+
+# Оптимизация производительности
+performance:
+  # Кеширование
+  cache_enabled: true
+  cache_ttl_hours: 2             # TTL для sentiment кеша
+  
+  # Многопоточность
+  max_workers: 4
+  
+  # Ограничения API
+  api_rate_limits:
+    bybit_requests_per_minute: 20
+    max_retries: 3
+    retry_delay_seconds: 5
+
+# Режимы работы
+modes:
+  # Режим разработки
+  development:
+    paper_trading: true
+    enhanced_logging: true
+    sentiment_simulation: true    # Используем симулированные sentiment данные
+  
+  # Продакшн режим  
+  production:
+    paper_trading: false
+    real_sentiment_data: true     # Используем реальные API
+    strict_risk_management: true
+    alert_notifications: true 
