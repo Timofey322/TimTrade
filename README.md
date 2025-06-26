@@ -1,4 +1,4 @@
-# 🚀 Enhanced Crypto Trading System with Sentiment Analysis
+# 🚀 Enhanced Crypto Trading System with Sentiment Analysis (+9.42%  69 days) 
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
