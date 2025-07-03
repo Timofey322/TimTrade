@@ -1,4 +1,4 @@
-# 🤖 TimAI — Advanced AI Trading System
+# 🤖 TimAI — Advanced AI Trading System (+18.7% 90 days)
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
