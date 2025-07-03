@@ -117,4 +117,4 @@ This software is for educational purposes only. Past performance does not guaran
 
 ---
 
-**Made with ❤️ by the TimAI Team** 
+**Made with ❤️ by the Tim (Im GAY)** 
