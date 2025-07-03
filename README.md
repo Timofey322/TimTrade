@@ -73,7 +73,7 @@ WW2/
 │   ├── smote_balancer.py  # SMOTE class balancing
 │   └── optuna_optimizer.py # Hyperparameter optimization
 ├── tests/                 # Test files
-├── timai_test.py          # Main test script
+├── test_timai_aggressive.py          # Main test script
 └── requirements.txt       # Dependencies
 ```
 
