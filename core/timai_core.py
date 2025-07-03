@@ -60,9 +60,7 @@ except ImportError:
     print("⚠️ Optuna Hyperopt не найден")
 
 # Базовые ML библиотеки
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import SGDClassifier, PassiveAggressiveClassifier
-from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, f1_score, classification_report, precision_recall_fscore_support
 from sklearn.model_selection import cross_val_score, StratifiedKFold
 from sklearn.preprocessing import StandardScaler
