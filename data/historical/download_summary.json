@@ -1,0 +1,48 @@
+{
+  "BTCUSDT": {
+    "5m": {
+      "filepath": "historical\\BTCUSDT_5m_5years_20210705_20250702.csv",
+      "records": 418692,
+      "start_date": "2021-07-05 15:00:00",
+      "end_date": "2025-07-02 13:55:00",
+      "file_size_mb": 38.31771659851074
+    },
+    "15m": {
+      "filepath": "historical\\BTCUSDT_15m_5years_20210705_20250702.csv",
+      "records": 139565,
+      "start_date": "2021-07-05 15:00:00",
+      "end_date": "2025-07-02 14:00:00",
+      "file_size_mb": 12.906217575073242
+    },
+    "60m": {
+      "filepath": "historical\\BTCUSDT_60m_5years_20210705_20250702.csv",
+      "records": 34992,
+      "start_date": "2021-07-05 15:00:00",
+      "end_date": "2025-07-02 14:00:00",
+      "file_size_mb": 3.2765417098999023
+    }
+  },
+  "ETHUSDT": {
+    "5m": {
+      "filepath": "historical\\ETHUSDT_5m_5years_20210705_20250702.csv",
+      "records": 418694,
+      "start_date": "2021-07-05 15:00:00",
+      "end_date": "2025-07-02 14:05:00",
+      "file_size_mb": 36.198875427246094
+    },
+    "15m": {
+      "filepath": "historical\\ETHUSDT_15m_5years_20210705_20250702.csv",
+      "records": 139565,
+      "start_date": "2021-07-05 15:00:00",
+      "end_date": "2025-07-02 14:00:00",
+      "file_size_mb": 12.204325675964355
+    },
+    "60m": {
+      "filepath": "historical\\ETHUSDT_60m_5years_20210705_20250702.csv",
+      "records": 34992,
+      "start_date": "2021-07-05 15:00:00",
+      "end_date": "2025-07-02 14:00:00",
+      "file_size_mb": 3.1029157638549805
+    }
+  }
+}

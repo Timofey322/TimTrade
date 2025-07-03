@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  timai-api:
+    build: .
+    container_name: timai-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - TIMAI_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  timai-training:
+    build: .
+    container_name: timai-training
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - TIMAI_ENV=training
+    command: ["python", "core/timai_core.py"]
+    restart: "no"
+    profiles:
+      - training
+
+  redis:
+    image: redis:7-alpine
+    container_name: timai-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    profiles:
+      - cache
+
+volumes:
+  redis_data:
+
+networks:
+  default:
+    name: timai-network 

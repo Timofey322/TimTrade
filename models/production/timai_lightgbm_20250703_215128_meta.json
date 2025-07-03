@@ -1,0 +1,33 @@
+{
+  "model_name": "lightgbm",
+  "timestamp": "20250703_215128",
+  "performance": {
+    "cv_f1_mean": 0.4464279680212259,
+    "cv_f1_std": 0.003176814776615648,
+    "cv_accuracy_mean": 0.43963466084240144,
+    "cv_precision_mean": 0.4553009214380824,
+    "cv_recall_mean": 0.43963466084240144,
+    "training_time": 2.512113332748413,
+    "status": "success"
+  },
+  "feature_importance": {
+    "sma_20": "3893",
+    "sma_50": "3117",
+    "rsi_14": "5059",
+    "macd_signal": "6175",
+    "stoch_k_14": "4762",
+    "stoch_d_14": "5174",
+    "volume_ratio_20": "5277",
+    "cci": "5006",
+    "williams_r_14": "992",
+    "sma_20_weighted": "635",
+    "sma_50_weighted": "558",
+    "rsi_14_weighted": "998",
+    "macd_signal_weighted": "1262",
+    "stoch_k_14_weighted": "155",
+    "stoch_d_14_weighted": "920",
+    "cci_weighted": "969",
+    "williams_r_14_weighted": "24"
+  },
+  "file_size_mb": 4.9062652587890625
+}

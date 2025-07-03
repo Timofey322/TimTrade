@@ -35,47 +35,50 @@ venv.bak/
 *.swo
 *~
 
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Data files (очень большие файлы данных)
-data/*.csv
-data/*.parquet
-data/*.h5
-data/*.hdf5
-data/large_datasets/
-
-# Model files (большие модели)
-models/*.pkl
-models/*.joblib
-models/*.h5
-models/*.model
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Logs
-logs/*.log
 *.log
+logs/
 
-# Cache
-.cache/
-*.cache
+# Data files (large CSV files)
+*.csv
+!sample_data.csv
 
-# OS
-.DS_Store
-Thumbs.db
-
-# API keys and secrets
-.env
-config/api_keys.yaml
-config/secrets.yaml
+# Model files (large pickle files)
+*.pkl
+*.joblib
 
 # Temporary files
 tmp/
 temp/
 *.tmp
 
-# Backups
-*.bak
-*.backup
+# Cache
+.cache/
+*.cache
 
-# Large result files
-backtest_results/large_*.csv 
+# Documentation (excluding README)
+*.md
+!README.md
+
+# Reports and analysis
+reports/
+analysis/ 
