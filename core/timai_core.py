@@ -45,6 +45,20 @@ except ImportError:
     OPTUNA_AVAILABLE = False
     print("❌ Optuna не установлен")
 
+# --- ДОБАВЛЕНО: Импорт улучшений ---
+try:
+    from research.advanced_techniques.smote_balancer import balance_data
+    print("✅ SMOTE/Over/Under Sampler доступен для балансировки классов")
+except ImportError:
+    balance_data = None
+    print("⚠️ SMOTE/Over/Under Sampler не найден")
+try:
+    from research.advanced_techniques.optuna_hyperopt import optimize_model
+    print("✅ Optuna Hyperopt доступен для оптимизации гиперпараметров")
+except ImportError:
+    optimize_model = None
+    print("⚠️ Optuna Hyperopt не найден")
+
 # Базовые ML библиотеки
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import SGDClassifier, PassiveAggressiveClassifier
@@ -1030,8 +1044,8 @@ class TimAI:
         self.deep_models = DeepLearningModels()  # Добавляем Deep Learning
         self.is_trained = False
         
-    def prepare_data(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, np.ndarray]:
-        """Подготавливает данные для обучения с улучшенной обработкой"""
+    def prepare_data(self, df: pd.DataFrame, balance_method=None) -> Tuple[pd.DataFrame, np.ndarray]:
+        """Подготавливает данные для обучения с улучшенной обработкой и балансировкой классов"""
         
         print("📊 TimAI: Подготовка данных...")
         
@@ -1112,18 +1126,27 @@ class TimAI:
         else:
             print(f"   ✅ Данные достаточно сбалансированы")
             return X, target
+        
+        # --- ДОБАВЛЕНО: Балансировка классов через SMOTE/Over/Under ---
+        if balance_method and balance_data is not None:
+            print(f"   🔧 Балансировка классов методом: {balance_method}")
+            X_bal, y_bal = balance_data(X, target, method=balance_method)
+            print(f"   ✅ После балансировки: {len(X_bal)} образцов, классы: {np.bincount(y_bal)}")
+            return X_bal, y_bal
     
-    def train(self, df: pd.DataFrame):
-        """Обучает все модели TimAI"""
-        
+    def train(self, df: pd.DataFrame, balance_method=None, optimize_hyperparams=False, model_type='xgboost'):
+        """Обучает все модели TimAI с возможностью балансировки классов и гипероптимизации"""
         print("🚀 TimAI: Начало обучения системы...")
-        
         # Подготовка данных
-        X, y = self.prepare_data(df)
-        
-        # Сохраняем список признаков для использования в predict
+        X, y = self.prepare_data(df, balance_method=balance_method)
         self.feature_cols = X.columns.tolist()
         print(f"   💾 Сохранено {len(self.feature_cols)} признаков для предсказания")
+        # --- ДОБАВЛЕНО: Гипероптимизация через Optuna ---
+        best_params = None
+        if optimize_hyperparams and optimize_model is not None:
+            print(f"   🔬 Запуск Optuna для {model_type}...")
+            best_params = optimize_model(X, y, model_type=model_type)
+            print(f"   🏆 Лучшие параметры Optuna: {best_params}")
         
         # Разделение на train/test (95%/5%)
         from sklearn.model_selection import train_test_split
