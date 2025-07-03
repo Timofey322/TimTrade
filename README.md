@@ -49,28 +49,10 @@ cd WW2
 pip install -r requirements.txt
 ```
 
-### 2. Run Backtest
+### 2. Run pipeline (Im GAY no cap)
 
 ```bash
-python timai_test.py
-```
-
-### 3. Use in Your Code
-
-```python
-from core.timai_core import TimAI
-
-# Initialize TimAI
-timai = TimAI(
-    symbols=['BTCUSDT'],
-    timeframes=['5m', '15m', '1h'],
-    use_smote=True,
-    use_optuna=True
-)
-
-# Train and backtest
-results = timai.run_backtest()
-print(f"Profit: {results['total_profit']:.2f}%")
+python test_timai_aggressive.py
 ```
 
 ## 📁 Project Structure
