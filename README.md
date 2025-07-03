@@ -1,6 +1,6 @@
 ﻿# TimAI — Advanced AI Trading System
  
-!!!!!My system provides these results EXCLUSIVELY on data it has not encountered before. The system is trained on historical data (since 2021) and tested from April 3, 2025, to today's date, July 3, 2025 (exactly 3 months). This system only offers our best parameters for a specific time period, BUT it is also adaptive, and these settings will remain relevant for the near future, as many indicators and trading patterns become outdated. Please be cautious and use the system for informational purposes only.
+!!!!!My system provides these results EXCLUSIVELY on data it has not encountered before. The system is trained on historical data (since 2021 to April 3 2025) and tested from April 3, 2025, to today's date, July 3, 2025 (exactly 3 months). This system only offers our best parameters for a specific time period, BUT it is also adaptive, and these settings will remain relevant for the near future, as many indicators and trading patterns become outdated. Please be cautious and use the system for informational purposes only.
 
 ## 🚀 Description
 
